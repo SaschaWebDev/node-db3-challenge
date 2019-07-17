@@ -58,9 +58,11 @@ function remove(id) {
 }
 
 function addStep(step, scheme_id) {
-  return db('steps')
-    .insert({ ...step, scheme_id })
-    .then(() => {
-      return findSteps(scheme_id);
-    });
+  return !findById(scheme_id)
+    ? null
+    : db('steps')
+        .insert({ ...step, scheme_id })
+        .then(() => {
+          return findSteps(scheme_id);
+        });
 }
