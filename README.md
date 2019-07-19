@@ -1,5 +1,9 @@
 # Multi-Table Queries and Database Helpers
 
+## Author
+
+Sascha Majewsky
+
 ## Topics
 
 - Joins
